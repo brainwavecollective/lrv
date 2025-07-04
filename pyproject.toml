@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "LRV Daemon: LeRobo-Vous - Peer2Peer robot telepresence for LeRobot"
 authors = [{name = "Daniel Ritchie", email = "daniel@brainwavecollective.ai"}]
 readme = "README.md"
-license = "Apache 2.0"
+license = "Apache-2.0"
 requires-python = ">=3.8"
 dependencies = [
     "aiohttp>=3.8.0",
