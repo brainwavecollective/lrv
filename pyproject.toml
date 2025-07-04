@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lrv"
+version = "0.1.0"
+description = "LRV: LeRobo-Vous - Peer2Peer robot telepresence for LeRobot"
+authors = [{name = "Daniel Ritchie", email = "daniel@brainwavecollective.ai"}]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+dependencies = [
+    "aiohttp>=3.8.0",
+    "websockets>=10.0",
+    "aiortc>=1.2.0",
+    "opencv-python>=4.5.0",
+    "numpy>=1.20.0",
+    "ifaddr>=0.1.7",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Hardware",
+]
+keywords = ["robotics", "robots", "telepresence", "lerobot", "webrtc", "remote-control", "p2p"]
+
+[project.scripts]
+lrvd = "lrv.cli:main"
+
+[project.urls]
+Homepage = "https://brainwavecollective.ai/"
+Repository = "https://github.com/brainwavecollective/lrv"
+Issues = "https://github.com/brainwavecollective/lrv/issues"
