@@ -70,11 +70,11 @@ You can view your connected robots and navigate to your active sessions at:
 Only you can see your connected robots.  Connected partners will only see your location and robot name.  
 
 ## Design Notes
-Connecting two robots across the world (or across the room) requires a complex multi-step negotiation process.   
+Connecting two robots across the world (or across the room) requires a complex multi-step negotiation process.  
 
-The robots can't just dial each other directly. Devices aren't aware that each other exists, let alone know who to connect to, or how to connect. In order to make all of this happen, intermediate servers are necessary to exchange contact information, identify connection paths, and ensure both sides have what they need to communicate directly with each other.  
+The robots can't just dial each other directly. Devices aren't aware that each other exists, let alone know who to connect to, or how to connect. In order to make all of this happen intermediate services are necessary to exchange contact information, identify connection paths, and ensure both sides have what they need to communicate directly with each other.  
 
-This daemon is tightly integrated with that process, and its use abstracts the underlying complexity of NAT traversal and signaling protocols.  It's the best of both worlds; you don't need to know or care how the complicated things happen, but you get to see exactly what code is running locally.  A relay server is not provided but can be made avaialable if you hvae more complex networking needs.  
+This daemon is tightly integrated with that process. It abstracts the underlying complexity of matching, NAT traversal and signaling protocols.  It's the best of both worlds; you don't need to know or care how the complicated things happen, but you get to see exactly what code is running locally.  At this time relay servers are not provided but can be made avaialable if you have more complex networking needs.  
 
 ![LeRobo-Vous Overview](lrvd_overview.png)  
 
