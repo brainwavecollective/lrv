@@ -1,7 +1,35 @@
 #!/usr/bin/env python3
 """
-LeRobo-Vous - Pulse Daemon v2.0 - Refactored Architecture
-Clean separation of concerns with dual WebRTC connection management
+LeRobo-Vous - the Robot Rendezvous
+A robot-robot bridge for LeRobot
+
+A project by the:
+~~~ B R A I N  W A V E  C O L L E C T I V E ~~~
+https://github.com/brainwavecollective/lrv
+
+This daemon enables automatic discovery, connectivity, and telepresense with other LeRobot participants around the world. 
+
+You can choose to be a teleoperator if you want to control other robots (leader), or as a robot if you want to allow others to teleop your robot (follower). See README for more info.
+
+Authored by Daniel Ritchie
+@LeDaniel[quantumpoet] on the LeRobot Discord
+@brainwavecoder9 on GitHub
+
+Use examples:
+
+TELEOPERATOR STATION (leader sending the control signals):
+lrvd \
+  --poste=teleop \
+  --teleop.type=so101_leader \
+  --teleop.port=<YOUR-TELEOP-PORT>```   
+
+ROBOT STATION (robot to be controlled and broadcast video):
+lrvd \
+  --poste=robot \
+  --robot.type=so101_follower \
+  --robot.port=<YOUR-ROBOT-PORT> \
+  --robot.cameras='{"gripper": {"index_or_path": "/dev/<YOUR-CAMERA>"}}'```
+
 """
 
 import argparse
@@ -1237,7 +1265,7 @@ class RendezMaitre:
             "timestamp": time.time()
         }
         await self.gateway.pulse("webrtc_established", {"webrtc_stats": webrtc_stats})
-        self.logger.info("Teleoperator is controlling")
+        self.logger.info("Teleoperator has control")
 
     async def execute(self, context: dict) -> PhaseResult:
         # Initial connection attempt
