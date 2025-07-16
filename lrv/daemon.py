@@ -52,9 +52,9 @@ import websockets
 from aiortc import RTCPeerConnection, RTCDataChannel, RTCConfiguration, RTCIceServer, RTCSessionDescription, RTCIceCandidate
 from aiortc.contrib.media import MediaStreamTrack
 
-from lerobot.common.robots import Robot, RobotConfig, make_robot_from_config
-from lerobot.common.teleoperators import Teleoperator, TeleoperatorConfig, make_teleoperator_from_config
-from lerobot.common.utils.utils import init_logging, move_cursor_up
+from lerobot.robots import Robot, RobotConfig, make_robot_from_config
+from lerobot.teleoperators import Teleoperator, TeleoperatorConfig, make_teleoperator_from_config
+from lerobot.utils.utils import init_logging, move_cursor_up
 
 try:
     from importlib.metadata import version
@@ -189,8 +189,8 @@ def setup_custom_logging(log_level: str):
     logging.getLogger('aiortc.rtcdtlstransport').setLevel(logging.WARNING)
     logging.getLogger('aiortc.mediastreams').setLevel(logging.WARNING)
 
-    logging.getLogger('lerobot.common.teleoperators').setLevel(logging.INFO)
-    logging.getLogger('lerobot.common.robots').setLevel(logging.INFO)
+    logging.getLogger('lerobot.teleoperators').setLevel(logging.INFO)
+    logging.getLogger('lerobot.robots').setLevel(logging.INFO)
 
     
 # ===== TRANSPORT LAYER =====
@@ -1945,7 +1945,7 @@ def parse_args():
 
 def load_camera_map_from_json(json_str, fps=30):
     """Load camera configuration from JSON string"""
-    from lerobot.common.cameras.opencv.configuration_opencv import OpenCVCameraConfig, ColorMode, Cv2Rotation
+    from lerobot.cameras.opencv.configuration_opencv import OpenCVCameraConfig, ColorMode, Cv2Rotation
 
     parsed = json.loads(json_str)
     result = {}
@@ -1971,7 +1971,7 @@ def create_config_from_args(args) -> LeConfig:
 
     if args.poste == "robot":
         if getattr(args, 'robot_type', None) == 'so101_follower':
-            from lerobot.common.robots.so101_follower import SO101FollowerConfig
+            from lerobot.robots.so101_follower import SO101FollowerConfig
             robot_config = SO101FollowerConfig(
                 port=getattr(args, 'robot_port', None),
                 id=getattr(args, 'robot_id', None),
@@ -1984,7 +1984,7 @@ def create_config_from_args(args) -> LeConfig:
 
     elif args.poste == "teleop":
         if getattr(args, 'teleop_type', None) == 'so101_leader':
-            from lerobot.common.teleoperators.so101_leader import SO101LeaderConfig
+            from lerobot.teleoperators.so101_leader import SO101LeaderConfig
             teleop_config = SO101LeaderConfig(
                 port=getattr(args, 'teleop_port', None),
                 id=args.teleop_id,
