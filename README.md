@@ -24,7 +24,7 @@ LeRobot Robots + Rendezvous = **LeRobo-Vous**
 ## Limitations 
 Currently restricted to SO101 arms. I expect this will work with all LeRobot arms but I'd like to test it first before turning it on for everyone. If you're willing to be the first to try then please contact me on the LeRobot Discord ([I am LeDaniel](https://discord.com/users/769583125579169812)).
 
-**⚠️WARNING⚠️ - LeRobot introduced a breaking change on July 1st so this only works with LeRobot from June 30th and earlier ()**
+**⚠️WARNING⚠️ - LeRobot introduced a breaking change on July 1st, so lrvd currently only works with LeRobot from June 30th and earlier (you can `pip install -e .` if you'd like to use this with the current version)**
 **This is a TEMPORARY limitation that we expect will be resolved [as soon as the LeRobot team bumps the version](https://github.com/huggingface/lerobot/pull/1515/files). When that happens I will release a new package that references the dependency.**
 
 ## Pre-Requisite Requirements
