@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lrvd"
-version = "0.1.0"
+version = "0.1.1"
 description = "LRV Daemon: LeRobo-Vous - Peer2Peer robot telepresence for LeRobot"
 authors = [{name = "Daniel Ritchie", email = "daniel@brainwavecollective.ai"}]
 readme = "README.md"
