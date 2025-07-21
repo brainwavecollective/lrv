@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lrvd"
-version = "0.1.1"
+version = "0.2.0"
 description = "LRV Daemon: LeRobo-Vous - Peer2Peer robot telepresence for LeRobot"
 authors = [{name = "Daniel Ritchie", email = "daniel@brainwavecollective.ai"}]
 readme = "README.md"
@@ -12,11 +12,12 @@ license = "Apache-2.0"
 requires-python = ">=3.8"
 dependencies = [
     "aiohttp>=3.8.0",
-    "websockets>=10.0",
     "aiortc>=1.2.0",
-    "opencv-python>=4.5.0",
-    "numpy>=1.20.0",
     "ifaddr>=0.1.7",
+	"numpy>=1.20.0",
+    "opencv-python>=4.5.0",
+	"tomli>=1.2.0,
+    "websockets>=10.0",
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -31,6 +32,9 @@ classifiers = [
     "Topic :: System :: Hardware",
 ]
 keywords = ["robotics", "robots", "teleoperation", "telepresence", "lerobot", "webrtc", "remote-control", "p2p"]
+
+[tool.lrvd.requirements]
+lerobot = "0.2.0"
 
 [project.scripts]
 lrvd = "lrv.cli:main"

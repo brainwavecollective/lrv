@@ -3,7 +3,9 @@ Welcome to the web of robots.
 
 > Connect your robot to the world.
 
-This little daemon is how robots find and meet each other across the internet.  Running `lrvd` will connect your robot and enable you to participate in peer-to-peer robotic telepresence. Simply spin up the daemons and your robots will auto-discover and auto-connect. You'll be given a URL to see the live video feed.  
+This little daemon is how robots find and meet each other across the internet.  Running `lrvd` will connect your robot and enable you to participate in peer-to-peer robotic telepresence. Simply spin up the daemons and your robots will auto-discover and auto-connect. You'll be given a URL to see the live video feed.   
+
+*Le Robot Rendezvous* is an homage to the LeRobot project by Hugging Face 🤗. Viva la open source! Thank you to the team for teaching us so much about robotics and AI.  
 
 ## Features
 - 🌐 Global network - connect with robots worldwide
@@ -24,17 +26,12 @@ LeRobot Robots + Rendezvous = **LeRobo-Vous**
 ## Limitations 
 Currently restricted to SO101 arms. I expect this will work with all LeRobot arms but I'd like to test it first before turning it on for everyone. If you're willing to be the first to try then please contact me on the LeRobot Discord ([I am LeDaniel](https://discord.com/users/769583125579169812)).
 
-**⚠️WARNING⚠️ - LeRobot introduced a breaking change on July 1st, so lrvd currently only works with LeRobot from June 30th and earlier (you can `pip install -e .` if you'd like to use this with the current version)**
-**This is a TEMPORARY limitation that we expect will be resolved [as soon as the LeRobot team bumps the version](https://github.com/huggingface/lerobot/pull/1515/files). When that happens I will release a new package that references the dependency.**
-
 ## Pre-Requisite Requirements
 - [LeRobot](https://github.com/huggingface/lerobot) already installed and working with compatible robot hardware such as the [SO101](https://github.com/TheRobotStudio/SO-ARM100)  
 
 That's it! LeRobot is all you need.  
 
 ## Installation
-
-*Le Robot Rendezvous* is an homage to the LeRobot project by Hugging Face 🤗. Viva la open source! Thank you to the team for teaching us so much about robotics and AI.  
 
 Before you start you'll need to activate your LeRobot Python environment. If you followed the [official instructions](https://huggingface.co/docs/lerobot/en/getting_started_real_world_robot) then you will run `conda activate lerobot`, but you may have also setup your environment differently using `uv venv lerobot`, `.venv/bin/activate`, `poetry shell`, etc..  
 
