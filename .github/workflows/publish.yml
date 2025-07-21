@@ -3,13 +3,14 @@ name: Publish to PyPI
 on:
   push:
     tags:
-      - 'v*'  # Trigger on version tags like v0.1.0
+      - 'v*'  # Trigger on version tags
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: pypi 
     permissions:
-      id-token: write  # Required for trusted publisher
+      id-token: write 
       contents: read
     
     steps:
@@ -31,4 +32,4 @@ jobs:
       
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        # No username/password needed - trusted publisher handles auth!
+        # No username/password needed - trusted publisher handles auth
