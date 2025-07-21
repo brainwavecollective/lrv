@@ -14,9 +14,9 @@ dependencies = [
     "aiohttp>=3.8.0",
     "aiortc>=1.2.0",
     "ifaddr>=0.1.7",
-	"numpy>=1.20.0",
+    "numpy>=1.20.0",
     "opencv-python>=4.5.0",
-	"tomli>=1.2.0,
+    "tomli>=1.2.0",
     "websockets>=10.0",
 ]
 classifiers = [
